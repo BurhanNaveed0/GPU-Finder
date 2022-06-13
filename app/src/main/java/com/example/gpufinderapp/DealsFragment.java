@@ -2,8 +2,10 @@ package com.example.gpufinderapp;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
@@ -15,10 +17,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.InputStream;
 import java.net.URL;
@@ -93,18 +103,79 @@ public class DealsFragment extends Fragment {
 
         // ADD INITIAL DATA
         ArrayList<Deal> dealList = new ArrayList<Deal>();
-        dealList.add(new Deal("EVGA 3060", "200", "Link", "https://m.media-amazon.com/images/I/612iNJG-YfS._AC_UY218_.jpg"));
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child(name);
+
+        int index = 0;
+
+        while(reference.child(String.valueOf(index)).getKey() != null && index < 9) {
+            reference.child(String.valueOf(index)).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot snapshot) {
+                    String name = (String) snapshot.child("name").getValue();
+                    String price = String.valueOf(snapshot.child("price").getValue());
+                    String url = (String) snapshot.child("link").getValue();
+                    String imageUrl = (String) snapshot.child("image").getValue();
+
+                    Deal deal = new Deal(name, price, url, imageUrl);
+                    dealList.add(deal);
+                }
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                }
+            });
+
+            index++;
+        }
 
         ArrayAdapter<Deal> dealAdapter = new DealAdapter(getContext(), R.layout.deal_adapter, dealList);
         listView.setAdapter(dealAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Uri uri = Uri.parse(dealAdapter.getItem(i).getUrl());
+                startActivity(new Intent(Intent.ACTION_VIEW, uri));
+            }
+        });
 
         // REFRESH DATA
         refreshImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int index = 0;
                 dealList.clear();
-                dealList.add(new Deal("EVGA 3060", "200", "Link", "https://m.media-amazon.com/images/I/612iNJG-YfS._AC_UY218_.jpg"));
-                dealAdapter.notifyDataSetChanged();
+
+                while(reference.child(String.valueOf(index)).getKey() != null && index < 9) {
+                    reference.child(String.valueOf(index)).addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot snapshot) {
+                            boolean upload = true;
+
+                            String gpu = (String) snapshot.child("name").getValue();
+
+                            gpu = gpu.substring(0, gpu.indexOf(name)+4);
+
+                            if(gpu.length() > 50)
+                                upload = false;
+
+                            String price = String.valueOf(snapshot.child("price").getValue());
+                            String url = (String) snapshot.child("link").getValue();
+                            String imageUrl = (String) snapshot.child("image").getValue();
+
+                            if(upload) {
+                                Deal deal = new Deal(gpu, price, url, imageUrl);
+                                dealList.add(deal);
+                                dealAdapter.notifyDataSetChanged();
+                            }
+                        }
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                        }
+                    });
+
+                    index++;
+                }
             }
         });
 
@@ -156,21 +227,20 @@ public class DealsFragment extends Fragment {
 
         @Override
         protected Bitmap doInBackground(Void... voids) {
-            Bitmap resized = null;
+            Bitmap myBitmap = null;
             
             try {
                 URL connection = new URL(url);
 
                 InputStream input = connection.openStream();
-                Bitmap myBitmap = BitmapFactory.decodeStream(input);
-                
-                resized = Bitmap.createScaledBitmap(myBitmap, 100, 100, false);
-                return resized;
+                myBitmap = BitmapFactory.decodeStream(input);
+
+                return myBitmap;
             } catch(Exception e) {
                 Log.d("err", e.getMessage());
             }
 
-            return resized;
+            return myBitmap;
         }
 
         @Override

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "85929553382",
+    "firebase_url": "https://gpu-finder-database-default-rtdb.firebaseio.com",
+    "project_id": "gpu-finder-database",
+    "storage_bucket": "gpu-finder-database.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:85929553382:android:c23621196d6b171b997a27",
+        "android_client_info": {
+          "package_name": "com.example.gpufinderapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "85929553382-nakqhp3ep3v4ng025be94ck0uts3v05b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gpufinderapp",
+            "certificate_hash": "ca612d638f1fec843d2d8f7ac29ab9290dec5374"
+          }
+        },
+        {
+          "client_id": "85929553382-i0ejb91bdcp66am8vrefqc1l5eccs9j8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6bWJH9RWEy-w5ddMbvxyj2e3TAblBXfU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "85929553382-i0ejb91bdcp66am8vrefqc1l5eccs9j8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
