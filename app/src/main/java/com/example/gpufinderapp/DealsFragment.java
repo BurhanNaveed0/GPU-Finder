@@ -23,7 +23,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -103,33 +102,11 @@ public class DealsFragment extends Fragment {
 
         // ADD INITIAL DATA
         ArrayList<Deal> dealList = new ArrayList<Deal>();
-
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child(name);
-
-        int index = 0;
-
-        while(reference.child(String.valueOf(index)).getKey() != null && index < 9) {
-            reference.child(String.valueOf(index)).addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot snapshot) {
-                    String name = (String) snapshot.child("name").getValue();
-                    String price = String.valueOf(snapshot.child("price").getValue());
-                    String url = (String) snapshot.child("link").getValue();
-                    String imageUrl = (String) snapshot.child("image").getValue();
-
-                    Deal deal = new Deal(name, price, url, imageUrl);
-                    dealList.add(deal);
-                }
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-                }
-            });
-
-            index++;
-        }
-
         ArrayAdapter<Deal> dealAdapter = new DealAdapter(getContext(), R.layout.deal_adapter, dealList);
         listView.setAdapter(dealAdapter);
+
+        DataFetchTask fetchTask = new DataFetchTask(dealList, dealAdapter);
+        fetchTask.execute();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -143,39 +120,8 @@ public class DealsFragment extends Fragment {
         refreshImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int index = 0;
-                dealList.clear();
-
-                while(reference.child(String.valueOf(index)).getKey() != null && index < 9) {
-                    reference.child(String.valueOf(index)).addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot snapshot) {
-                            boolean upload = true;
-
-                            String gpu = (String) snapshot.child("name").getValue();
-
-                            gpu = gpu.substring(0, gpu.indexOf(name)+4);
-
-                            if(gpu.length() > 50)
-                                upload = false;
-
-                            String price = String.valueOf(snapshot.child("price").getValue());
-                            String url = (String) snapshot.child("link").getValue();
-                            String imageUrl = (String) snapshot.child("image").getValue();
-
-                            if(upload) {
-                                Deal deal = new Deal(gpu, price, url, imageUrl);
-                                dealList.add(deal);
-                                dealAdapter.notifyDataSetChanged();
-                            }
-                        }
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-                        }
-                    });
-
-                    index++;
-                }
+                DataFetchTask fetchTask = new DataFetchTask(dealList, dealAdapter);
+                fetchTask.execute();
             }
         });
 
@@ -247,6 +193,62 @@ public class DealsFragment extends Fragment {
         protected void onPostExecute(Bitmap bitmap) {
             super.onPostExecute(bitmap);
             imageView.setImageBitmap(bitmap);
+        }
+    }
+
+    private class DataFetchTask extends AsyncTask<Void, Void, Void> implements com.example.gpufinderapp.DataFetchTask {
+        private List<Deal> list;
+        private ArrayAdapter<Deal> dealAdapter;
+
+        public DataFetchTask(List<Deal> list, ArrayAdapter<Deal> dealAdapter) {
+            this.list = list;
+            this.dealAdapter = dealAdapter;
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child(name);
+
+            int index = 0;
+            list.clear();
+
+            while(reference.child(String.valueOf(index)).getKey() != null && index < 9) {
+                reference.child(String.valueOf(index)).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot snapshot) {
+                        boolean upload = true;
+
+                        String gpu = (String) snapshot.child("name").getValue();
+
+                        gpu = gpu.substring(0, gpu.indexOf(name) + 4);
+
+                        if (gpu.length() > 50)
+                            upload = false;
+
+                        String price = String.valueOf(snapshot.child("price").getValue());
+                        String url = (String) snapshot.child("link").getValue();
+                        String imageUrl = (String) snapshot.child("image").getValue();
+
+                        if (upload) {
+                            Deal deal = new Deal(gpu, price, url, imageUrl);
+                            list.add(deal);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                    }
+                });
+
+                index++;
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void unused) {
+            dealAdapter.notifyDataSetChanged();
         }
     }
 }
