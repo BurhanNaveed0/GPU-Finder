@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/id_image"
+        android:layout_width="109dp"
+        android:layout_height="109dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/id_text_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/id_text_price"
+        app:layout_constraintEnd_toEndOf="@+id/id_text_price"
+        app:layout_constraintStart_toStartOf="@+id/id_text_price" />
+
+    <TextView
+        android:id="@+id/id_text_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        app:layout_constraintBottom_toBottomOf="@+id/id_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.373"
+        app:layout_constraintStart_toEndOf="@+id/id_image"
+        app:layout_constraintTop_toTopOf="@+id/id_image" />
+
+    <TextView
+        android:id="@+id/id_text_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Amazon Link"
+        android:textColor="#00BCD4"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/id_text_price"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="@+id/id_text_price"
+        app:layout_constraintTop_toBottomOf="@+id/id_text_price" />
+</androidx.constraintlayout.widget.ConstraintLayout>

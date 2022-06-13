@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DealsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ListView
+        android:id="@+id/id_list_view"
+        android:layout_width="341dp"
+        android:layout_height="340dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_text_gpu_name" />
+
+    <TextView
+        android:id="@+id/id_text_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Top Deals For "
+        android:textColor="#000000"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/id_text_gpu_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="RTX 3060"
+        android:textColor="#AF1B1B"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_text_header" />
+
+    <ImageView
+        android:id="@+id/id_image_refresh"
+        android:layout_width="40dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="16dp"
+        android:src="@android:drawable/checkbox_off_background"
+        app:layout_constraintBottom_toBottomOf="@+id/id_text_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/id_text_header"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/refresh"
+        tools:srcCompat="@drawable/refresh" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
