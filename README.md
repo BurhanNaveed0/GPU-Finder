@@ -17,6 +17,8 @@ Project complete; Git repo up to date. App version Rainforest API access expired
 
 ## Project Screen Shot(s)
 
+![frontendgif](https://github.com/BurhanNaveed0/GPU-Radar/assets/81490717/da0ad10f-50ba-4775-a17b-77e2b6892eb2)
+
 ## Reflection
 
   - What was the context for this project? (ie: was this a side project? was this for Turing? was this for an experiment?)
