@@ -4,9 +4,9 @@ An app dedicated to helping users find top deals for RTX 3 series cards.
 
 ![demo](https://github.com/BurhanNaveed0/GPU-Radar/assets/81490717/6d729cb8-dd42-4707-8766-a9763027d493)
 
-## Technologies Used
+## Technologies Used 👨‍💻
 <details>
-  <summary>Client (Mobile Application) </summary>
+  <summary>Client 📱</summary>
   <ul>
     <li><a href="https://www.java.com/en/">Java</a></li>
     <li><a href="https://expo.dev/">XML</a></li>
@@ -15,7 +15,7 @@ An app dedicated to helping users find top deals for RTX 3 series cards.
 </details>
 
 <details>
-  <summary>Backend</summary>
+  <summary>Backend 📚</summary>
   <ul>
     <li><a href="https://www.python.org/">Python</a></li>
     <li><a href="https://github.com/thisbejim/Pyrebase">Pyrebase</a></li>
@@ -23,10 +23,10 @@ An app dedicated to helping users find top deals for RTX 3 series cards.
   </ul>
 </details>
 
-## Project Status
+## Project Status ✔
 Project complete; Git repo up to date. App version Rainforest API access expired; Android SDK/API Level outdated. 
 
-## Project Demo / Code Reviews
+## Project Demo / Code Reviews 📲
 
 <ul>
     <li><a href="https://youtu.be/uYKIHIpRv1M">App Demo</a></li>
@@ -34,13 +34,13 @@ Project complete; Git repo up to date. App version Rainforest API access expired
     <li><a href="https://youtu.be/lbJeoeuNTL0">Backend Code Review</a></li>
   </ul>
 
-Front End (Android Studio + Java) <br />
+Front End 📱 (Android Studio + Java) <br /> 
 ![frontendgif](https://github.com/BurhanNaveed0/GPU-Radar/assets/81490717/da0ad10f-50ba-4775-a17b-77e2b6892eb2)
 
-Front End (Android Studio + Java) <br />
+Back End 📚 (Firebase + Python) <br />
 ![backend](https://github.com/BurhanNaveed0/GPU-Radar/assets/81490717/4bd5cc3c-4f9d-4aee-b0e8-1de38d124361)
 
-## Reflection
+## Reflection 📝
 
   - What was the context for this project? (ie: was this a side project? was this for Turing? was this for an experiment?)
   - What did you set out to build?
