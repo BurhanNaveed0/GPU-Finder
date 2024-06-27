@@ -1,7 +1,5 @@
 ## GPU Radar 📡
 
-![demo](https://github.com/BurhanNaveed0/GPU-Radar/assets/81490717/6d729cb8-dd42-4707-8766-a9763027d493)
-
 An app dedicated to helping users find top deals for RTX 3 series cards. 
 
 ## Project Status
@@ -16,6 +14,8 @@ Project complete; Git repo up to date. App version Rainforest API access expired
   </ul>
 
 ## Project Screen Shot(s)
+
+![demo](https://github.com/BurhanNaveed0/GPU-Radar/assets/81490717/6d729cb8-dd42-4707-8766-a9763027d493)
 
 ![frontendgif](https://github.com/BurhanNaveed0/GPU-Radar/assets/81490717/da0ad10f-50ba-4775-a17b-77e2b6892eb2)
 
