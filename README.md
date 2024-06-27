@@ -4,6 +4,7 @@ An app dedicated to helping users find top deals for RTX 3 series cards.
 
 ![demo](https://github.com/BurhanNaveed0/GPU-Radar/assets/81490717/6d729cb8-dd42-4707-8766-a9763027d493)
 
+## Technologies Used
 
 ## Project Status
 Project complete; Git repo up to date. App version Rainforest API access expired; Android SDK/API Level outdated. 
@@ -18,8 +19,8 @@ Project complete; Git repo up to date. App version Rainforest API access expired
 
 ## Project Screen Shot(s)
 
-
 ![frontendgif](https://github.com/BurhanNaveed0/GPU-Radar/assets/81490717/da0ad10f-50ba-4775-a17b-77e2b6892eb2)
+![backend](https://github.com/BurhanNaveed0/GPU-Radar/assets/81490717/4bd5cc3c-4f9d-4aee-b0e8-1de38d124361)
 
 ## Reflection
 
