@@ -1,4 +1,7 @@
-## GPU Radar
+## GPU Radar 📡
+
+![demo](https://github.com/BurhanNaveed0/GPU-Radar/assets/81490717/6d729cb8-dd42-4707-8766-a9763027d493)
+
 An app dedicated to helping users find top deals for RTX 3 series cards. 
 
 ## Project Status
@@ -17,8 +20,6 @@ This project is currently in development. Users can filter tweets by username an
   </ul>
 
 ## Project Screen Shot(s)
-
-![demo](https://github.com/BurhanNaveed0/GPU-Radar/assets/81490717/6d729cb8-dd42-4707-8766-a9763027d493)
 
 ## Reflection
 
