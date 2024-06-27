@@ -5,11 +5,7 @@
 An app dedicated to helping users find top deals for RTX 3 series cards. 
 
 ## Project Status
-Project complete
-
-#### Example:
-
-This project is currently in development. Users can filter tweets by username and keyword and see visual data representation. Functionality to sort by additional parameters is in progress.
+Project complete; Git repo up to date. App version Rainforest API access expired; Android SDK/API Level outdated. 
 
 ## Project Demo / Code Reviews
 
