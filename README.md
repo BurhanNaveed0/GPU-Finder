@@ -10,7 +10,11 @@ This project is currently in development. Users can filter tweets by username an
 
 ## Project Demo / Code Reviews
 
-https://youtu.be/uYKIHIpRv1M
+<ul>
+    <li><a href="https://youtu.be/uYKIHIpRv1M">App Demo</a></li>
+    <li><a href="https://youtu.be/Wfq9cpOj2pw">Frontend Code Review</a></li>
+    <li><a href="https://youtu.be/lbJeoeuNTL0">Backend Code Review</a></li>
+  </ul>
 
 ## Project Screen Shot(s)
 
