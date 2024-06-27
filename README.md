@@ -1,6 +1,6 @@
 ## GPU Radar 📡
 
-An app dedicated to helping users find top deals for RTX 3 series cards. 
+GPU Radar is an app dedicated to helping users find top Amazon Marketplace listings for Nvidea's RTX 3 Series Cards in the tough and scarse GPU market in today's time. GPU Radar scans through the Amazon Marketplace in 5-10 minute intervals, detecting any low price offerings for GPU's that could dissapear unnoticed by shoppers. GPU Radar assists shoppers get access to low price GPU deals before scalpers wishing to resell them for a higher price do. 
 
 ![demo](https://github.com/BurhanNaveed0/GPU-Radar/assets/81490717/6d729cb8-dd42-4707-8766-a9763027d493)
 
