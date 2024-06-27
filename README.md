@@ -19,10 +19,10 @@ Project complete; Git repo up to date. App version Rainforest API access expired
 
 ## Project Screen Shot(s)
 
-Front End (Android Studio + Java)
+Front End (Android Studio + Java) <br />
 ![frontendgif](https://github.com/BurhanNaveed0/GPU-Radar/assets/81490717/da0ad10f-50ba-4775-a17b-77e2b6892eb2)
 
-Front End (Android Studio + Java)
+Front End (Android Studio + Java) <br />
 ![backend](https://github.com/BurhanNaveed0/GPU-Radar/assets/81490717/4bd5cc3c-4f9d-4aee-b0e8-1de38d124361)
 
 ## Reflection
