@@ -6,6 +6,25 @@ An app dedicated to helping users find top deals for RTX 3 series cards.
 
 ## Technologies Used
 
+## Technologies Used
+<details>
+  <summary>Client (Mobile Application) </summary>
+  <ul>
+    <li><a href="https://www.java.com/en/">Java</a></li>
+    <li><a href="https://expo.dev/">XML</a></li>
+    <li><a href="https://developer.android.com/studio?gad_source=1&gclid=CjwKCAjw-O6zBhASEiwAOHeGxXeWZgT9muC50iZgfEeWoWRSc1p7O5V8lqIsRCIpYqx4VqIfEuMYvBoCR6AQAvD_BwE&gclsrc=aw.ds">Android Studio</a></li>
+  </ul>
+</details>
+
+<details>
+  <summary>Backend</summary>
+  <ul>
+    <li><a href="https://www.python.org/">Python</a></li>
+    <li><a href="https://github.com/thisbejim/Pyrebase">Pyrebase</a></li>
+    <li><a href="https://firebase.google.com/">Firebase</a></li>
+  </ul>
+</details>
+
 ## Project Status
 Project complete; Git repo up to date. App version Rainforest API access expired; Android SDK/API Level outdated. 
 
