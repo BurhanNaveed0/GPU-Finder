@@ -17,8 +17,6 @@ Project complete; Git repo up to date. App version Rainforest API access expired
     <li><a href="https://youtu.be/lbJeoeuNTL0">Backend Code Review</a></li>
   </ul>
 
-## Project Screen Shot(s)
-
 Front End (Android Studio + Java) <br />
 ![frontendgif](https://github.com/BurhanNaveed0/GPU-Radar/assets/81490717/da0ad10f-50ba-4775-a17b-77e2b6892eb2)
 
