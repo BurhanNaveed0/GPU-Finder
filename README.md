@@ -18,8 +18,6 @@ This project is currently in development. Users can filter tweets by username an
 
 ## Project Screen Shot(s)
 
-#### Example:   
-
 ![demo](https://github.com/BurhanNaveed0/GPU-Radar/assets/81490717/6d729cb8-dd42-4707-8766-a9763027d493)
 
 ## Reflection
