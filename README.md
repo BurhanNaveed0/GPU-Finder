@@ -42,7 +42,7 @@ Back End 📚 (Firebase + Python) <br />
 
 ## Reflection 📝
 
-### What was the context for this project?
+### What inspired you to develop this project?
 The GPU Radar app was created for my Mobile Application Development class's final project. As part of the requirements of the final project, all projects had to include a database element and data exchange with an API. Being a Gamer and PC building enthusiest, I saw a chance to work on a project that could assist other like me in finding cheaper PC parts online. With the inflation of GPU prices due to scalpers being at an all time high at the time of development, I decided to put a focus specifically on GPUs. 
 
 ### What did you set out to build?
